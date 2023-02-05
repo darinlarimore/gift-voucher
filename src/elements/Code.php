@@ -491,7 +491,12 @@ class Code extends Element
             case 'currentAmount':
             case 'originalAmount':
             {
+                $voucher = Voucher::find()->status(null)->id($this->owner->voucherId)->one();
                 $code = Commerce::getInstance()->getPaymentCurrencies()->getPrimaryPaymentCurrencyIso();
+
+                if ($voucher && $voucher->slug === 'credit') {
+                    $code = 'CRD';
+                }
 
                 return Craft::$app->getLocale()->getFormatter()->asCurrency($this->$attribute, strtoupper($code));
             }
