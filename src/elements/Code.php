@@ -498,7 +498,7 @@ class Code extends Element
                     $code = 'CRD';
                 }
 
-                return Craft::$app->getLocale()->getFormatter()->asCurrency($this->$attribute, strtoupper($code));
+                return Currency::formatAsCurrency($this->$attribute, strtoupper($code), false, true, true);
             }
             case 'expiryDate':
             {
