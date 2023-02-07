@@ -14,6 +14,7 @@ use craft\elements\actions\Delete;
 use craft\helpers\ArrayHelper;
 use craft\helpers\DateTimeHelper;
 use craft\helpers\UrlHelper;
+use craft\commerce\helpers\Currency;
 use craft\validators\DateTimeValidator;
 
 use craft\commerce\Plugin as Commerce;
